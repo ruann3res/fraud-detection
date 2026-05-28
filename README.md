@@ -279,7 +279,10 @@ R: Isso é normal. Semana 4 vocês aprenderão técnicas como SMOTE ou class_wei
 R: São componentes PCA - já transformadas. Foco em Amount, Time e Class.
 
 **P: Quando usar K-Means vs DBSCAN?**  
-R: K-Means para clusters gerais. DBSCAN para detectar anomalias (melhor para fraude).
+R: K-Means para clusters gerais. DBSCAN para detectar anomalias (MELHOR para fraude!).
+
+**P: A pasta dados/ não aparece no GitHub?**  
+R: ✅ Correto! `.gitignore` ignora `.csv` files. CSV fica local, não sobe online (160MB).
 
 ---
 

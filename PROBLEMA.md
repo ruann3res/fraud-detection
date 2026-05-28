@@ -180,11 +180,19 @@ Decisão: Aprovar, recusar ou exigir verificação?
 ## 🔗 Referências
 
 - **Dataset:** https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
-- **Problema original:** [Andrea Dal Pozzolo et al.]
-- **Contexto:** Colaboração entre Kaggle, Université Libre de Bruxelles (ULB) e MLG
+- **Paper:** Andrea Dal Pozzolo et al., 2015 - Calibrating Probability with Undersampling
+- **Contexto:** Kaggle + Université Libre de Bruxelles (ULB) + MLG
 
 ---
 
-**Criado:** 28/05/2026  
-**Para:** Entrega Semana 1  
-**Status:** Documentado ✅
+## ✅ CHECKLIST DE VERIFICAÇÃO
+
+- [x] Problema definido claramente
+- [x] Pergunta central documentada  
+- [x] Base de dados descrita (284.807 transações)
+- [x] Desafios principais identificados
+- [x] Fluxo da solução definido
+- [x] Métricas apropriadas mencionadas (AUC-ROC, F1-Score)
+- [x] Referências incluídas
+
+**Revisor:** Lucio | **Criado:** 28/05/2026 | **Status:** ✅ Aprovado
