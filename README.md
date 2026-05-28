@@ -27,25 +27,39 @@ Disciplina: Tópicos Especiais 2 - Agrupamento de Dados e Inteligência Computac
 
 ## 📦 Estrutura do Repositório
 
+### 📋 SEMANA 1 - (✅ Já existe)
 ```
 fraud-detection/
 ├── README.md                                    # Este arquivo
 ├── Trabalho_Final_Agrupamento...pdf            # Especificações do trabalho
-├── Semana_1_EDA_e_Preparacao.ipynb            # Notebook da Semana 1
-├── dados/
-│   └── creditcard.csv                          # Base de dados (a baixar)
-├── notebooks/
-│   ├── semana_2_clustering_baseline.ipynb      # Clustering I
-│   ├── semana_3_clustering_validacao.ipynb     # Clustering II
-│   ├── semana_4_ic_modelo.ipynb                # IC I
-│   └── semana_5_integracao_final.ipynb         # IC II + Integração
-├── scripts/
-│   ├── preprocessing.py                         # Funções de preprocessamento
-│   ├── clustering.py                            # Funções de clustering
-│   └── metrics.py                               # Funções de avaliação
-└── relatorio/
-    ├── relatorio_tecnico.md                    # Relatório final
-    └── slides.pptx                             # Apresentação final
+├── PROBLEMA.md                                 # Definição do problema (Lucio)
+├── Semana_1_EDA_e_Preparacao.ipynb            # Notebook da Semana 1 (Ruan)
+├── CHECKLIST_SEMANA_1.md                       # Tarefas da semana 1
+├── INICIO_AQUI.md                              # Guia rápido
+├── RESUMO_ARQUIVOS_CRIADOS.md                  # Sumário de arquivos
+├── GUIA_GIT_PUSH.md                            # Como fazer push
+├── REVISAO_LUCIO.md                            # Revisão da entrega
+├── .gitignore                                  # Configuração Git
+└── dados/
+    └── creditcard.csv                          # Base de dados (CSV local, ~160MB)
+```
+
+### 📅 SEMANAS 2-5 - (Será criado progressivamente)
+```
+notebooks/                                       # Notebooks Semana 2-5
+├── semana_2_clustering_baseline.ipynb
+├── semana_3_clustering_validacao.ipynb
+├── semana_4_ic_modelo.ipynb
+└── semana_5_integracao_final.ipynb
+
+scripts/                                         # Funções Python reutilizáveis
+├── preprocessing.py
+├── clustering.py
+└── metrics.py
+
+relatorio/                                       # Documentação final
+├── relatorio_tecnico.md
+└── slides.pptx
 ```
 
 ---
