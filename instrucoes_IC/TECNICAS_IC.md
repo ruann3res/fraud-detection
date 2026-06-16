@@ -111,7 +111,7 @@ O clustering já separa fraudes acima do acaso. Clusters de alto risco identific
 | 4 | 0,372% | 2,2× |
 | **5** | **0,648%** | **3,9×** |
 
-Coluna produzida por Ruan: `cluster` (int, 0–5). Detalhes em `PLANO_IC.md`.
+Coluna produzida por Ruan: `cluster` (int, 0–5). Detalhes em `instrucoes_IC/PLANO_IC.md`.
 
 ---
 
@@ -121,6 +121,6 @@ Coluna produzida por Ruan: `cluster` (int, 0–5). Detalhes em `PLANO_IC.md`.
 - [x] Definir estratégia de mitigação: `class_weight='balanced'` (primária) + SMOTE (experimento opcional)
 - [x] Definir split: Stratified train/test + Stratified K-Fold
 - [x] Formalizar integração clustering + IC (Opção 3 + Opção 1)
-- [ ] Semana 3: avaliar se DBSCAN melhora separação vs. K-Means
+- [ ] Semana 3: avaliar em `notebooks/semana_3_comparacao.ipynb` se DBSCAN melhora separação vs. K-Means
 - [ ] Semana 4: treinar Random Forest baseline vs. híbrido e comparar AUC-ROC / F1
 - [ ] Instalar `imbalanced-learn` se for testar SMOTE (`pip install imbalanced-learn`)

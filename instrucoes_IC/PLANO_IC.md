@@ -214,11 +214,9 @@ cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 ### Semana 3 (Ruan + Artur acompanha)
 | Atividade | Responsável | Entregável |
 |-----------|-------------|------------|
-| DBSCAN e comparação com K-Means | Ruan | Notebook `semana_3_clustering_validacao.ipynb` |
+| DBSCAN e comparação com K-Means | Ruan | Notebook `notebooks/semana_3_comparacao.ipynb` |
 | Avaliar se DBSCAN melhora separação de fraudes | Artur | Atualizar tabela de clusters em `PLANO_IC.md` |
 | Decidir rótulo final para Semana 4 (K-Means, DBSCAN ou ambos) | Grupo | Decisão documentada |
-
-### Semana 4
 
 ### Semana 4
 

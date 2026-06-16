@@ -112,20 +112,25 @@ Ou mais concretamente:
 
 ## 💡 O Que Vamos Resolver
 
-### Semana 1 (ATUAL)
+### Semana 1
 ✅ Explorar e preparar os dados
 ✅ Entender distribuições e padrões
 ✅ Identificar outliers (possíveis fraudes)
 
-### Semana 2-3
-✅ Encontrar grupos (clusters) de padrões normais
-✅ Usar DBSCAN para detectar anomalias
-✅ Interpretar o que cada cluster representa
+### Semana 2
+✅ Encontrar grupos (clusters) de padrões normais com K-Means
+✅ Definir baseline de agrupamento
+✅ Justificar atributos, escala, distância e problemas iniciais
+
+### Semana 3
+✅ Comparar K-Means com DBSCAN
+✅ Interpretar e nomear perfis encontrados
+✅ Definir `cluster_kmeans_semana3` e `dbscan_ruido` para uso em IC
 
 ### Semana 4-5
-✅ Construir modelo preditivo
-✅ Usar clusters como features para melhorar predição
-✅ Demonstrar que clustering melhora detecção de fraude
+⬜ Construir modelo preditivo
+⬜ Usar clusters como features para melhorar predição
+⬜ Demonstrar que clustering melhora detecção de fraude
 
 ---
 

@@ -1,320 +1,270 @@
-# 🚨 Detecção de Fraude em Transações Financeiras
+# Detecção de Fraude em Transações Financeiras
 
-**Trabalho Final Integrador - Semana 1**  
+**Trabalho Final Integrador**  
 Disciplina: Tópicos Especiais 2 - Agrupamento de Dados e Inteligência Computacional
 
 ---
 
-## 📋 Informações do Projeto
+## Visão Geral
 
-- **Cenário:** 4 - Detecção de Fraude ou Transações Financeiras Suspeitas
-- **Grupo:** Ruan, Lucio e Artur
-- **Base de Dados:** Credit Card Fraud Detection (Kaggle)
-- **Linguagem:** Python
-- **Período:** 5 semanas
+Este projeto investiga detecção de fraudes em transações financeiras usando uma combinação de:
+
+- análise exploratória e preparação de dados;
+- agrupamento de dados com K-Means e DBSCAN;
+- comparação e interpretação dos clusters;
+- integração dos clusters com modelos de Inteligência Computacional.
+
+O cenário escolhido é **Detecção de Fraude ou Transações Financeiras Suspeitas**, usando a base **Credit Card Fraud Detection**.
 
 ---
 
-## 👥 Divisão de Papéis
+## Estrutura Atual do Projeto
+
+```text
+fraud-detection/
+├── README.md
+├── INICIO_AQUI.md
+├── GUIA_GIT_PUSH.md
+├── PROBLEMA.md
+├── RESUMO_ARQUIVOS_CRIADOS.md
+├── Trabalho_Final_AgrupamentoDeDados_InteligênciaComputacional.docx (1).pdf
+├── pyproject.toml
+├── uv.lock
+├── checklist_semanal/
+│   ├── CHECKLIST_SEMANA_1.md
+│   ├── CHECKLIST_SEMANA_2.md
+│   └── CHECKLIST_SEMANA_3.md
+├── dados/
+│   └── creditcard.csv
+├── instrucoes_IC/
+│   ├── Documentacao_Referencia_IC.pdf
+│   ├── PLANO_IC.md
+│   └── TECNICAS_IC.md
+├── notebooks/
+│   ├── README.md
+│   ├── Semana_1_EDA_e_Preparacao.ipynb
+│   ├── semana_2_clustering_baseline.ipynb
+│   └── semana_3_comparacao.ipynb
+├── relatorio/
+│   ├── README.md
+│   ├── relatorio_semana_2.md
+│   └── relatorio_semana_3.md
+└── scripts/
+    └── README.md
+```
+
+---
+
+## Divisão de Papéis
 
 | Aluno | Papel | Responsabilidades |
 |-------|-------|-------------------|
-| **Ruan** | Agrupamento de Dados | • Implementação técnica em Python<br>• Preprocessamento de dados<br>• Detecção de outliers<br>• Clustering (K-Means, DBSCAN)<br>• Avaliação de clusters |
-| **Lucio** | Dados, Pipeline e Integração | • Escolha e documentação da base<br>• Análise exploratória<br>• Organização do repositório<br>• Documentação técnica<br>• Decisões de dados |
-| **Artur** | Inteligência Computacional e Decisão | • Pesquisa de técnicas de IC<br>• Modelagem preditiva<br>• Tratamento de desbalanceamento<br>• Seleção de métricas<br>• Integração clustering + IC |
+| **Ruan** | Agrupamento de Dados | Implementação técnica em Python, preprocessing, K-Means, DBSCAN, avaliação dos clusters |
+| **Lucio** | Dados, Pipeline e Integração | Organização do repositório, documentação da base, análise exploratória, integração dos entregáveis |
+| **Artur** | Inteligência Computacional e Decisão | Técnicas de IC, métricas, desbalanceamento, integração clustering + modelo supervisionado |
 
 ---
 
-## 📦 Estrutura do Repositório
+## Como Começar
 
-### 📋 SEMANA 1 - (✅ Já existe)
-```
-fraud-detection/
-├── README.md                                    # Este arquivo
-├── Trabalho_Final_Agrupamento...pdf            # Especificações do trabalho
-├── PROBLEMA.md                                 # Definição do problema (Lucio)
-├── Semana_1_EDA_e_Preparacao.ipynb            # Notebook da Semana 1 (Ruan)
-├── CHECKLIST_SEMANA_1.md                       # Tarefas da semana 1
-├── INICIO_AQUI.md                              # Guia rápido
-├── RESUMO_ARQUIVOS_CRIADOS.md                  # Sumário de arquivos
-├── GUIA_GIT_PUSH.md                            # Como fazer push
-├── REVISAO_LUCIO.md                            # Revisão da entrega
-├── .gitignore                                  # Configuração Git
-└── dados/
-    └── creditcard.csv                          # Base de dados (CSV local, ~160MB)
-```
+### 1. Preparar o ambiente
 
-### 📅 SEMANAS 2-5 - (Será criado progressivamente)
-```
-notebooks/                                       # Notebooks Semana 2-5
-├── semana_2_clustering_baseline.ipynb
-├── semana_3_clustering_validacao.ipynb
-├── semana_4_ic_modelo.ipynb
-└── semana_5_integracao_final.ipynb
-
-scripts/                                         # Funções Python reutilizáveis
-├── preprocessing.py
-├── clustering.py
-└── metrics.py
-
-relatorio/                                       # Documentação final
-├── relatorio_tecnico.md
-└── slides.pptx
-```
-
----
-
-## 🚀 Como Começar
-
-### 1. Configurar o Ambiente
+O projeto usa Python 3.12 ou superior, conforme `pyproject.toml`.
 
 ```bash
-# Clonar o repositório
-git clone <URL-do-repositorio>
-cd fraud-detection
-
-# Criar ambiente virtual (opcional, recomendado)
 python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# ou
-venv\Scripts\activate     # Windows
-
-# Instalar dependências
+venv\Scripts\activate
 pip install pandas numpy matplotlib seaborn scikit-learn jupyter
 ```
 
-### 2. Baixar a Base de Dados
-
-1. Ir para: https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
-2. Fazer download de `creditcard.csv`
-3. Descompactar em `dados/creditcard.csv`
+Se estiver usando `uv`:
 
 ```bash
-# Verificar se o arquivo está no lugar certo
-ls dados/creditcard.csv
+uv sync
 ```
 
-### 3. Executar o Notebook da Semana 1
+### 2. Conferir a base de dados
+
+O arquivo esperado é:
+
+```text
+dados/creditcard.csv
+```
+
+A base pode ser obtida em: https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
+
+### 3. Abrir os notebooks
 
 ```bash
-# Iniciar Jupyter
 jupyter notebook
-
-# Abrir: Semana_1_EDA_e_Preparacao.ipynb
-# Executar todas as células (Kernel > Run All)
 ```
 
----
+Ordem sugerida:
 
-## 📅 Timeline de Entregas
-
-### ✅ Semana 1 (ATUAL)
-**Entrega:** Base tratada, entendimento do problema e preparação inicial
-
-**O que vocês têm que fazer:**
-
-1. **Lucio:**
-   - [ ] Criar/organizar repositório GitHub
-   - [ ] Baixar e documentar a base de dados
-   - [ ] Executar seções 1-4 do notebook
-   - [ ] Documentar problema e pergunta de negócio
-   - [ ] Documentar divisão de papéis
-
-2. **Ruan:**
-   - [ ] Executar seções 2-10 do notebook
-   - [ ] Implementar tratamento de ausentes
-   - [ ] Implementar tratamento de duplicidades
-   - [ ] Detectar e documentar outliers
-   - [ ] Preparar dados para próxima etapa
-
-3. **Artur:**
-   - [ ] Pesquisar técnicas de detecção de fraude
-   - [ ] Documentar desafios de desbalanceamento
-   - [ ] Listar métricas apropriadas (AUC-ROC, F1-score, etc)
-   - [ ] Planejar integração clustering + IC
-
-### 📅 Semana 2
-Agrupamento de Dados I: representação, distância e baseline
-- Seleção de atributos
-- Normalização
-- Aplicar K-Means
-- Análise inicial dos clusters
-
-### 📅 Semana 3
-Agrupamento de Dados II: comparação, validação e interpretação
-- Aplicar DBSCAN
-- Comparar algoritmos
-- Calcular métricas de avaliação
-- Interpretar clusters
-
-### 📅 Semana 4
-Inteligência Computacional I: construção do modelo inteligente
-- Construir modelo preditivo
-- Integrar clusters como features
-- Avaliação preliminar
-- Comparação com/sem clusters
-
-### 📅 Semana 5
-Inteligência Computacional II e integração final
-- Refinamento do modelo
-- Demonstração prática
-- Relatório técnico
-- Apresentação final
+1. `notebooks/Semana_1_EDA_e_Preparacao.ipynb`
+2. `notebooks/semana_2_clustering_baseline.ipynb`
+3. `notebooks/semana_3_comparacao.ipynb`
 
 ---
 
-## 🔍 O que está pronto no Notebook?
+## Entregas por Semana
 
-O notebook `Semana_1_EDA_e_Preparacao.ipynb` já contém:
+### Semana 1 - EDA e Preparação
 
-✅ Seção 1: Descrição do problema e base de dados  
-✅ Seção 2: Importações e configurações  
-✅ Seção 3: Carregamento da base  
-✅ Seção 4: Análise exploratória inicial (EDA)  
-✅ Seção 5: Tratamento de valores ausentes  
-✅ Seção 6: Tratamento de duplicidades  
-✅ Seção 7: Identificação de outliers  
-✅ Seção 8: Transformação de variáveis categóricas  
-✅ Seção 9: Descrição dos atributos  
-✅ Seção 10: Correlações e padrões  
-✅ Seção 11: Status final e próximas etapas  
+Arquivos principais:
+
+- `notebooks/Semana_1_EDA_e_Preparacao.ipynb`
+- `checklist_semanal/CHECKLIST_SEMANA_1.md`
+- `PROBLEMA.md`
+
+Entrega:
+
+- definição do problema;
+- entendimento da base;
+- análise exploratória;
+- tratamento de ausentes e duplicidades;
+- identificação de outliers;
+- preparação para clustering.
+
+### Semana 2 - Agrupamento I: Representação, Distância e Baseline
+
+Arquivos principais:
+
+- `notebooks/semana_2_clustering_baseline.ipynb`
+- `checklist_semanal/CHECKLIST_SEMANA_2.md`
+- `relatorio/relatorio_semana_2.md`
+
+Entrega:
+
+- seleção e justificativa dos atributos;
+- normalização/padronização;
+- definição da distância;
+- K-Means como primeiro baseline;
+- visualização e análise inicial dos clusters;
+- identificação de problemas no agrupamento inicial.
+
+### Semana 3 - Agrupamento II: Comparação, Validação e Interpretação
+
+Arquivos principais:
+
+- `notebooks/semana_3_comparacao.ipynb`
+- `checklist_semanal/CHECKLIST_SEMANA_3.md`
+- `relatorio/relatorio_semana_3.md`
+
+Entrega:
+
+- aplicação de DBSCAN como segundo algoritmo;
+- comparação com K-Means;
+- uso de métricas como Silhouette, Davies-Bouldin e Calinski-Harabasz;
+- análise de parâmetros;
+- interpretação e nomeação dos perfis;
+- geração de estrutura de saída para uso em IC.
+
+Resultado consolidado:
+
+- K-Means mantido como estrutura principal de segmentação;
+- DBSCAN usado como sinal complementar de anomalia;
+- `cluster_kmeans_semana3` definido como feature categórica;
+- `dbscan_ruido` definido como indicador binário para a etapa de IC.
+
+### Semana 4 - Inteligência Computacional I
+
+Arquivos de apoio:
+
+- `instrucoes_IC/TECNICAS_IC.md`
+- `instrucoes_IC/PLANO_IC.md`
+
+Entrega esperada:
+
+- construção do modelo supervisionado;
+- uso dos clusters como features;
+- tratamento do desbalanceamento;
+- comparação preliminar com e sem clusters.
+
+### Semana 5 - Integração Final
+
+Pasta prevista:
+
+- `relatorio/`
+
+Entrega esperada:
+
+- refinamento do modelo;
+- análise final dos resultados;
+- relatório técnico;
+- apresentação.
 
 ---
 
-## 📊 Sobre a Base de Dados
+## Sobre a Base de Dados
 
-### Características
 - **Tamanho:** 284.807 transações
-- **Fraudes:** 492 transações (0.17%)
-- **Período:** ~2 dias (setembro de 2013)
-- **Features:** V1-V28 (PCA) + Amount + Time + Class
-- **Desafio:** ALTAMENTE DESBALANCEADA!
+- **Fraudes:** 492 transações, aproximadamente 0,17%
+- **Features:** `V1` a `V28`, `Time`, `Amount`, `Class`
+- **Classe alvo:** `Class`, com `0` para legítima e `1` para fraude
 
-### Atributos
-- **Time:** Segundos desde primeira transação
-- **V1-V28:** Componentes PCA (confidencial)
-- **Amount:** Valor da transação em dólar
-- **Class:** 0 (legítima) ou 1 (fraude)
+Observações importantes:
 
-### Desafios Principais
-1. Desbalanceamento extremo (99.83% vs 0.17%)
-2. Necessário usar métricas apropriadas
-3. Features PCA não têm interpretação direta
-4. Base cobre período curto (~2 dias)
+- `V1` a `V28` são componentes PCA anonimizados.
+- `Amount` e `Time` são as variáveis interpretáveis.
+- A base é extremamente desbalanceada.
+- Outliers não devem ser removidos automaticamente, pois podem representar fraudes.
 
 ---
 
-## 🛠️ Requisitos Técnicos
+## Estratégia Técnica
 
-### Bibliotecas Python Necessárias
-```
-pandas>=1.3.0          # Manipulação de dados
-numpy>=1.20.0          # Computação numérica
-matplotlib>=3.4.0      # Visualização
-seaborn>=0.11.0        # Visualização avançada
-scikit-learn>=0.24.0   # Machine learning
-jupyter>=1.0.0         # Notebooks interativos
-```
+### Agrupamento
 
-### Versão Python
-- Python 3.8 ou superior recomendado
+- **K-Means:** baseline de clustering da Semana 2.
+- **DBSCAN:** segundo algoritmo da Semana 3, útil para ruído e anomalias.
+- **Decisão Semana 3:** usar K-Means para perfis e DBSCAN como indicador de ruído/anomalia.
+- **Validação:** métricas internas e análise externa usando `Class` apenas após o agrupamento.
 
----
+### Inteligência Computacional
 
-## 📝 Notas Importantes
+Plano atual:
 
-### ⚠️ Para Ruan (Agrupamento):
-- **Semana 2:** Foque em normalização e K-Means como baseline
-- **Semana 3:** DBSCAN é IDEAL para detectar fraudes (outliers/anomalias)
-- **Métrica importante:** Silhouette Score para validação
-- **Desafio:** Dados PCA transformados - não há interpretação direta
+- usar Random Forest como técnica supervisionada principal;
+- testar modelos com e sem variáveis de cluster;
+- usar `class_weight='balanced'` e, se necessário, SMOTE como experimento;
+- priorizar AUC-ROC, F1-Score, Recall, Precision e curva Precision-Recall.
 
-### ⚠️ Para Lucio (Dados):
-- **Semana 1:** Documentação clara é essencial
-- **Base:** Decisão entre Kaggle ou UCI - Kaggle é mais clara
-- **Repositório:** Use Git commits bem documentados
-- **Análise:** Mostre correlações e padrões iniciais
-
-### ⚠️ Para Artur (IC):
-- **Desbalanceamento:** NÃO usar Acurácia! Use AUC-ROC, F1-score, Precision-Recall
-- **Semana 4:** Considerar técnicas como:
-  - Random Forest
-  - Redes Neurais
-  - SVM para anomalias
-- **Integração:** Clusters como features + variáveis originais = melhor performance
+Detalhes em `instrucoes_IC/PLANO_IC.md` e `instrucoes_IC/TECNICAS_IC.md`.
 
 ---
 
-## 🎯 Critérios de Sucesso - Semana 1
+## Métricas Importantes
 
-**Entrega deve conter:**
+Para clustering:
 
-- ✅ Notebook executável com todas as seções
-- ✅ Base carregada e documentada
-- ✅ Análise exploratória com gráficos
-- ✅ Tratamento de ausentes (0 valores NaN)
-- ✅ Duplicidades removidas
-- ✅ Outliers identificados e documentados
-- ✅ Divisão de papéis clara
-- ✅ Repositório Git com commits organizados
-- ✅ Documentação em markdown
+- Silhouette Score;
+- Davies-Bouldin;
+- Calinski-Harabasz;
+- distribuição de fraudes por cluster.
 
----
+Para classificação de fraude:
 
-## 📚 Referências
+- AUC-ROC;
+- F1-Score;
+- Recall;
+- Precision;
+- Confusion Matrix;
+- Precision-Recall Curve.
 
-### Bases de Dados
-- Credit Card Fraud Detection: https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
-- Default of Credit Card Clients: https://archive.ics.uci.edu/ml/datasets/default%2Bof%2Bcredit%2Bcard%2Bclients
-
-### Técnicas Recomendadas
-- K-Means: Agrupar padrões de comportamento
-- DBSCAN: Detectar anomalias/fraudes
-- Random Forest: Classificação de fraude
-- Neural Networks: Modelagem não-linear
-
-### Métricas para Desbalanceamento
-- AUC-ROC (Receiver Operating Characteristic)
-- F1-Score (Harmonic mean de Precision e Recall)
-- Precision-Recall Curve
-- Confusion Matrix
+Não usar acurácia como métrica principal, pois a base é muito desbalanceada.
 
 ---
 
-## ❓ Dúvidas Frequentes
+## Status Atual
 
-**P: Preciso remover os outliers em Amount?**  
-R: Não! Outliers em Amount podem ser fraudes. Mantenha para análise posterior.
-
-**P: Os dados estão muito desbalanceados, o que fazer?**  
-R: Isso é normal. Semana 4 vocês aprenderão técnicas como SMOTE ou class_weight.
-
-**P: Como interpretar features V1-V28?**  
-R: São componentes PCA - já transformadas. Foco em Amount, Time e Class.
-
-**P: Quando usar K-Means vs DBSCAN?**  
-R: K-Means para clusters gerais. DBSCAN para detectar anomalias (MELHOR para fraude!).
-
-**P: A pasta dados/ não aparece no GitHub?**  
-R: ✅ Correto! `.gitignore` ignora `.csv` files. CSV fica local, não sobe online (160MB).
+- Semana 1 documentada e com notebook em `notebooks/`.
+- Semana 2 documentada com checklist, relatório e baseline K-Means.
+- Semana 3 documentada com checklist, relatório e comparação K-Means vs. DBSCAN.
+- Documentos de IC estão em `instrucoes_IC/`.
+- Próximo foco: Semana 4, integração dos clusters ao modelo supervisionado.
 
 ---
 
-## 📞 Contato e Suporte
-
-- **Notebook dúvidas:** Consultar seção "Notas e Observações"
-- **Problema técnico:** Verificar imports e versões das bibliotecas
-- **Dataset:** Qualquer dúvida, consultar documentação do Kaggle
-
----
-
-## 📄 Licença e Atribuição
-
-- Dataset: Kaggle MLG ULB - Crédito aos autores originais
-- Trabalho: IFTM, Período 5, 2024-2025
-- Professores: Dr. Gustavo Prado e Dr. Clarimundo Machado
-
----
-
-**Última atualização:** 28 de maio de 2026  
-**Status:** Semana 1 - Iniciado ✅
+**Última atualização:** 15 de junho de 2026  
+**Status:** Estrutura atualizada até a Semana 3

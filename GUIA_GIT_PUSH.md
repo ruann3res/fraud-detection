@@ -1,126 +1,126 @@
-# 🚀 GUIA RÁPIDO - GIT PUSH PARA LUCIO
+# Guia Rápido de Git
 
-**Status:** Todos os arquivos revisados ✅  
-**Próximo passo:** Enviar para GitHub
-
----
-
-## 📌 O QUE VAI ACONTECER?
-
-1. **Git add** → Adiciona todos os 8 arquivos
-2. **Git commit** → Cria uma "foto" desse momento  
-3. **Git push** → Envia pro GitHub
-4. ✅ Seu repositório fica online!
+Este guia mostra como registrar e enviar as mudanças do projeto para o GitHub.
 
 ---
 
-## 🎯 EXECUTE ESTES 3 COMANDOS
+## 1. Verificar o Estado Atual
 
-Abra o terminal na pasta `fraud-detection` e execute:
+```bash
+git status
+```
 
-### **Comando 1: Adicionar tudo**
+Confira quais arquivos foram modificados, movidos ou criados.
+
+---
+
+## 2. Adicionar Arquivos
+
+Para adicionar tudo que deve entrar no commit:
+
 ```bash
 git add .
 ```
-✅ Resultado esperado: Nenhuma mensagem de erro
 
-### **Comando 2: Fazer commit**
+Se quiser adicionar por partes:
+
 ```bash
-git commit -m "docs: semana 1 - estrutura e documentação revisada"
+git add README.md
+git add checklist_semanal/
+git add notebooks/
+git add instrucoes_IC/
+git add relatorio/
 ```
-✅ Resultado esperado: Algo como "8 files changed, XX insertions"
 
-### **Comando 3: Fazer push**
+---
+
+## 3. Fazer Commit
+
+Use uma mensagem curta e clara:
+
+```bash
+git commit -m "docs: atualizar estrutura do projeto"
+```
+
+Outros exemplos:
+
+```bash
+git commit -m "feat: adicionar notebook de comparacao da semana 3"
+git commit -m "docs: adicionar checklist e relatorio da semana 3"
+git commit -m "docs: atualizar plano de inteligencia computacional"
+git commit -m "fix: corrigir caminhos dos notebooks"
+```
+
+---
+
+## 4. Enviar para o GitHub
+
 ```bash
 git push
 ```
-✅ Resultado esperado: "updating...", depois "done"
 
 ---
 
-## ✅ VERIFICAR NO GITHUB
+## Arquivos que Não Devem Subir
 
-Depois de fazer push:
+O arquivo abaixo deve ficar apenas local:
 
-1. Acesse: https://github.com/seuUsuario/fraud-detection
-2. Deve aparecer os 8 arquivos:
-   - ✅ .gitignore
-   - ✅ README.md
-   - ✅ PROBLEMA.md
-   - ✅ CHECKLIST_SEMANA_1.md
-   - ✅ INICIO_AQUI.md
-   - ✅ RESUMO_ARQUIVOS_CRIADOS.md
-   - ✅ Semana_1_EDA_e_Preparacao.ipynb
-   - ✅ Trabalho_Final_Agrupamento...pdf
-
-3. Mensagem de commit: "docs: semana 1 - estrutura e documentação revisada" ✅
-
----
-
-## 💾 ARQUIVOS QUE NÃO VÃO:
-
-- ❌ `dados/creditcard.csv` ← Ignorado por .gitignore (160MB)
-  - Isso é proposital! Você baixa localmente mesmo.
-
----
-
-## 📥 DEPOIS: BAIXAR CSV
-
-Depois de fazer push, baixe o CSV:
-
-1. Link: https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
-2. Faça download do arquivo `creditcard.csv`
-3. Coloque em: `fraud-detection/dados/creditcard.csv`
-4. ⚠️ **NÃO vai aparecer no GitHub** (isso é certo!)
-
----
-
-## 🎯 CHECKLIST FINAL
-
-- [ ] Terminal aberto na pasta `fraud-detection`
-- [ ] Executei `git add .`
-- [ ] Executei `git commit ...`
-- [ ] Executei `git push`
-- [ ] Verifiquei no GitHub
-- [ ] Vi os 8 arquivos online
-- [ ] Avisei Ruan para começar
-- [ ] Vou baixar CSV depois
-
----
-
-## ⚡ LINHA RÁPIDA (Copiar e colar)
-
-```bash
-git add . && git commit -m "docs: semana 1 - estrutura e documentação revisada" && git push
+```text
+dados/creditcard.csv
 ```
 
-Isso executa os 3 comandos de uma vez! ⚡
+Motivo:
+
+- é grande;
+- contém dados;
+- já deve ser ignorado pelo `.gitignore`.
 
 ---
 
-## 🆘 SE ALGO DER ERRADO
+## Estrutura que Deve Aparecer no GitHub
 
-**Erro: "fatal: not a git repository"**
-- Solução: Abra o terminal NA PASTA fraud-detection
-
-**Erro: "permission denied"**
-- Solução: Configure git: `git config --global user.email "seu@email.com"`
-
-**Erro: "Authentication failed"**
-- Solução: Use token pessoal do GitHub (Configurações > Developer Settings > Tokens)
-
----
-
-## ✅ DEPOIS QUE TUDO ESTIVER NO GITHUB
-
-Avise seu grupo:
-
-📢 **"Pessoal, a estrutura da Semana 1 está pronta!"**
-
-- **Ruan:** Pode executar o notebook `Semana_1_EDA_e_Preparacao.ipynb` (depois que eu baixar o CSV)
-- **Artur:** Pode começar a pesquisar técnicas de IC e criar TECNICAS_IC.md
+```text
+README.md
+INICIO_AQUI.md
+GUIA_GIT_PUSH.md
+PROBLEMA.md
+RESUMO_ARQUIVOS_CRIADOS.md
+checklist_semanal/
+instrucoes_IC/
+notebooks/
+scripts/
+relatorio/
+```
 
 ---
 
-**Você está pronto! 🚀**
+## Checagem Final Antes do Push
 
+- [ ] `git status` revisado
+- [ ] `dados/creditcard.csv` não está no commit
+- [ ] notebooks abrem corretamente
+- [ ] relatórios semanais estão revisados
+- [ ] caminhos nos arquivos Markdown estão atualizados
+- [ ] mensagem de commit está clara
+- [ ] `git push` executado
+
+---
+
+## Problemas Comuns
+
+**Erro: `fatal: not a git repository`**  
+Abra o terminal dentro da pasta `fraud-detection`.
+
+**Erro de autenticação no GitHub**  
+Confira credenciais, token pessoal ou login do GitHub.
+
+**CSV apareceu no commit**  
+Remova do stage antes do commit:
+
+```bash
+git restore --staged dados/creditcard.csv
+```
+
+---
+
+**Status:** guia atualizado para a estrutura atual do projeto.
