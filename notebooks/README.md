@@ -1,10 +1,18 @@
-# 📓 Notebooks - Análise e Modelos
+# Notebooks
 
-Pasta para notebooks das semanas 2-5:
+Esta pasta concentra os notebooks executáveis do projeto.
 
-- **semana_2_clustering_baseline.ipynb** → K-Means e normalização
-- **semana_3_clustering_validacao.ipynb** → DBSCAN e validação
-- **semana_4_ic_modelo.ipynb** → Modelo preditivo (parte 1)
-- **semana_5_integracao_final.ipynb** → IC + Integração final (parte 2)
+## Ordem Recomendada
 
-*Criados durante execução do projeto*
+| Semana | Notebook | Finalidade |
+|--------|----------|------------|
+| Semana 1 | `Semana_1_EDA_e_Preparacao.ipynb` | Análise exploratória, limpeza e preparação inicial |
+| Semana 2 | `semana_2_clustering_baseline.ipynb` | K-Means, padronização, distância euclidiana e baseline |
+| Semana 3 | `semana_3_comparacao.ipynb` | Comparação K-Means vs. DBSCAN, métricas e interpretação |
+
+## Observações
+
+- A base esperada é `../dados/creditcard.csv` quando o notebook é executado a partir desta pasta.
+- A coluna `Class` deve ser usada apenas para análise externa dos clusters, não como entrada do agrupamento.
+- Os notebooks das Semanas 4 e 5 ainda serão criados conforme a etapa de Inteligência Computacional avançar.
+

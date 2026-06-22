@@ -91,16 +91,36 @@ Arquiteturas de **Redes Neurais do tipo Autoencoder** (aprendizado não supervis
 
 ## Integração com Clusters
 
-Os clusters gerados pela fase de agrupamento (K-Means/DBSCAN) são integrados conforme a estratégia escolhida:
-- **Opção 1**: Rótulo do cluster como atributo categórico enriquecido no dataset
-- **Opção 2**: Dados segmentados fisicamente por perfis comportamentais, com modelo específico por cluster
-- **Opção 3**: Validação comparativa entre modelo puro (sem clusters) e modelo híbrido (com clusters)
+### ✅ Decisão Formalizada (Semana 2)
+
+**Estratégia:** Opção 3 (comparar modelo COM vs. SEM clusters) com implementação via Opção 1 (rótulo `cluster` como feature).
+
+| Opção | Status |
+|-------|--------|
+| Opção 1 — cluster como feature | ✅ Adotada (braço híbrido) |
+| Opção 2 — submodelos por cluster | ❌ Descartada |
+| Opção 3 — contraste baseline vs. híbrido | ✅ Adotada (experimento principal) |
+
+### Evidência da Semana 2 (K-Means, k=6)
+
+O clustering já separa fraudes acima do acaso. Clusters de alto risco identificados:
+
+| Cluster | Taxa de fraude | vs. global (0,173%) |
+|---------|----------------|---------------------|
+| 3 | 0,246% | 1,5× |
+| 4 | 0,372% | 2,2× |
+| **5** | **0,648%** | **3,9×** |
+
+Coluna produzida por Ruan: `cluster` (int, 0–5). Detalhes em `instrucoes_IC/PLANO_IC.md`.
 
 ---
 
 ## Próximos Passos
 
-- Confirmar Random Forest como técnica padrão ou avaliar alternativa com Redes Neurais
-- Definir estratégia de mitigação: SMOTE, Class Weights, ou combinação de ambas
-- Validar que todas as bibliotecas (scikit-learn, imblearn) estão operacionais no ambiente de desenvolvimento
-- Formalizar a escolha de integração entre agrupamento e IC (Opção 1, 2 ou 3)
+- [x] Confirmar Random Forest como técnica padrão
+- [x] Definir estratégia de mitigação: `class_weight='balanced'` (primária) + SMOTE (experimento opcional)
+- [x] Definir split: Stratified train/test + Stratified K-Fold
+- [x] Formalizar integração clustering + IC (Opção 3 + Opção 1)
+- [ ] Semana 3: avaliar em `notebooks/semana_3_comparacao.ipynb` se DBSCAN melhora separação vs. K-Means
+- [ ] Semana 4: treinar Random Forest baseline vs. híbrido e comparar AUC-ROC / F1
+- [ ] Instalar `imbalanced-learn` se for testar SMOTE (`pip install imbalanced-learn`)

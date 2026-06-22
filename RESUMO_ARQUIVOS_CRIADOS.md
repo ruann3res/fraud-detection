@@ -1,292 +1,175 @@
-# 📦 RESUMO - ARQUIVOS CRIADOS PARA SEMANA 1
+# Resumo da Estrutura Atual do Projeto
 
-**Data:** 28 de maio de 2026  
 **Projeto:** Detecção de Fraude em Transações Financeiras  
-**Grupo:** Ruan, Lucio e Artur
+**Grupo:** Ruan, Lucio e Artur  
+**Última atualização:** 15 de junho de 2026
 
 ---
 
-## ✅ O QUE FOI CRIADO PARA VOCÊS
+## Estado Atual
 
-### 1. **Notebook Jupyter** - `Semana_1_EDA_e_Preparacao.ipynb`
-Um notebook COMPLETO e PRONTO para usar com:
+O projeto já não está mais apenas na estrutura inicial da Semana 1. Os arquivos foram organizados por finalidade:
 
-✅ **11 seções prontas:**
-- Descrição do problema e base de dados
-- Importações e configurações
-- Carregamento da base
-- Análise exploratória detalhada
-- Tratamento de valores ausentes
-- Remoção de duplicidades
-- Detecção de outliers
-- Análise de variáveis categóricas
-- Descrição dos atributos
-- Correlações e padrões
-- Status final e próximas etapas
-
-✅ **Características:**
-- Comentários em cada célula
-- Gráficos profissionais com matplotlib/seaborn
-- Explicações em português
-- Pronto para executar (basta ter o CSV)
-- ~500+ linhas de código bem estruturado
+- checklists semanais em `checklist_semanal/`;
+- notebooks em `notebooks/`;
+- documentos de Inteligência Computacional em `instrucoes_IC/`;
+- base local em `dados/`;
+- materiais futuros em `scripts/` e `relatorio/`.
 
 ---
 
-### 2. **README.md** - Guia Completo do Projeto
-Documento profissional com:
+## Estrutura Atual
 
-✅ **Conteúdo:**
-- Informações gerais do projeto
-- Divisão de papéis (tabelado)
-- Estrutura do repositório
-- Como começar (passo a passo)
-- Timeline de 5 semanas
-- Informações sobre a base de dados
-- Desafios principais
-- Requisitos técnicos
-- Notas importantes por aluno
-- Critérios de sucesso
-- Referências úteis
-- FAQ (Perguntas frequentes)
-
-✅ **Uso:** Consultar sempre que tiverem dúvida
-
----
-
-### 3. **CHECKLIST_SEMANA_1.md** - Tarefas Detalhadas
-Checklist separado para CADA MEMBRO do grupo:
-
-✅ **Para RUAN (Agrupamento de Dados):**
-- 8 etapas de implementação do notebook
-- Qualidade do código (comentários, nomes, etc)
-- Documentação técnica esperada
-- Como fazer commits no Git
-- O que entregar no final
-
-✅ **Para LUCIO (Dados e Integração):**
-- Configuração do repositório GitHub
-- Como escolher e baixar a base de dados
-- Análise exploratória a fazer
-- Documentação do problema
-- Organização e coordenação
-- Commits esperados
-
-✅ **Para ARTUR (Inteligência Computacional):**
-- Pesquisa sobre desbalanceamento
-- Técnicas de IC recomendadas
-- Métricas apropriadas para fraude
-- Planejamento de integração
-- Documentos a criar
-- Comunicação com o grupo
-
-✅ **Também tem:**
-- Checklist do grupo (geral)
-- Timeline sugerida dia a dia
-- FAQ do grupo
-- Dicas de ouro
-
----
-
-### 4. **.gitignore** - Arquivo de Configuração Git
-Arquivo profissional que ignora:
-
-✅ **O que é ignorado:**
-- Arquivos Python compilados (`__pycache__/`, `*.pyc`)
-- Ambientes virtuais (`venv/`, `env/`)
-- IDEs (`.vscode/`, `.idea/`)
-- Arquivos de dados (`*.csv`, `*.xlsx`, `*.parquet`)
-- Logs e caches
-- Arquivos do SO (`.DS_Store`, `Thumbs.db`)
-
-✅ **Resultado:** Repositório limpo, apenas código
-
----
-
-## 📂 ESTRUTURA FINAL DO REPOSITÓRIO
-
-Após aplicar tudo, o repositório ficará assim:
-
-```
+```text
 fraud-detection/
-├── .git/                                          ← Git inicializado
-├── .gitignore                                     ← Criado ✅
-├── README.md                                      ← Criado ✅
-├── CHECKLIST_SEMANA_1.md                         ← Criado ✅
-├── Trabalho_Final_Agrupamento...pdf              ← Original
-├── Semana_1_EDA_e_Preparacao.ipynb               ← Criado ✅
+├── README.md
+├── INICIO_AQUI.md
+├── GUIA_GIT_PUSH.md
+├── PROBLEMA.md
+├── RESUMO_ARQUIVOS_CRIADOS.md
+├── Trabalho_Final_AgrupamentoDeDados_InteligênciaComputacional.docx (1).pdf
+├── pyproject.toml
+├── uv.lock
+├── checklist_semanal/
+│   ├── CHECKLIST_SEMANA_1.md
+│   ├── CHECKLIST_SEMANA_2.md
+│   └── CHECKLIST_SEMANA_3.md
 ├── dados/
-│   ├── .gitignore                                ← Vai criar para ignorar CSVs
-│   └── creditcard.csv                            ← Vocês baixam e colocam aqui
+│   └── creditcard.csv
+├── instrucoes_IC/
+│   ├── Documentacao_Referencia_IC.pdf
+│   ├── PLANO_IC.md
+│   └── TECNICAS_IC.md
 ├── notebooks/
-│   ├── semana_2_clustering_baseline.ipynb        ← Semanas futuras
-│   ├── semana_3_clustering_validacao.ipynb
-│   ├── semana_4_ic_modelo.ipynb
-│   └── semana_5_integracao_final.ipynb
-├── scripts/
-│   ├── preprocessing.py                          ← Semanas futuras
-│   ├── clustering.py
-│   └── metrics.py
-└── relatorio/
-    ├── relatorio_tecnico.md                      ← Semana 5
-    └── slides.pptx                               ← Semana 5
+│   ├── README.md
+│   ├── Semana_1_EDA_e_Preparacao.ipynb
+│   ├── semana_2_clustering_baseline.ipynb
+│   └── semana_3_comparacao.ipynb
+├── relatorio/
+│   ├── README.md
+│   ├── relatorio_semana_2.md
+│   └── relatorio_semana_3.md
+└── scripts/
+    └── README.md
 ```
 
 ---
 
-## 🚀 PRÓXIMOS PASSOS - O QUE FAZER AGORA
+## Arquivos Principais
 
-### ⏱️ HOJE (Imediatamente)
-
-**Lucio - PRIMEIRA COISA:**
-1. Faça um `git add .` para incluir todos os arquivos criados
-2. Faça `git commit -m "docs: estrutura inicial da semana 1"`
-3. Faça `git push` para enviar ao GitHub
-
-```bash
-cd fraud-detection
-git add .
-git commit -m "docs: estrutura inicial da semana 1"
-git push
-```
-
-**Lucio - SEGUNDA COISA:**
-1. Baixe o arquivo `creditcard.csv` em: https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
-2. Descompacte em: `dados/creditcard.csv`
-3. NÃO faça commit do CSV (`.gitignore` já cuida disso)
-
-### ⏱️ PRÓXIMOS DIAS (Essa semana)
-
-**Ruan:**
-1. Clone o repositório (ou faça `git pull` se já tem)
-2. Abra `Semana_1_EDA_e_Preparacao.ipynb` no Jupyter
-3. Instale dependências: `pip install pandas numpy matplotlib seaborn scikit-learn`
-4. Execute o notebook célula por célula
-5. Siga o checklist em `CHECKLIST_SEMANA_1.md` (seção Ruan)
-6. Faça commits regularmente
-
-**Lucio:**
-1. Organize repositório GitHub (adicione colaboradores, crie issues)
-2. Verifique se análise exploratória inicial funciona com Ruan
-3. Documente o problema em `PROBLEMA.md` (novo arquivo)
-4. Siga o checklist em `CHECKLIST_SEMANA_1.md` (seção Lucio)
-
-**Artur:**
-1. Estude desbalanceamento de classes (como lidar com 99.83% vs 0.17%)
-2. Pesquise técnicas de IC para detecção de fraude
-3. Crie documento `TECNICAS_IC.md` com pesquisa
-4. Crie documento `PLANO_IC.md` com estratégia
-5. Siga o checklist em `CHECKLIST_SEMANA_1.md` (seção Artur)
-
-### ⏱️ FINAL DA SEMANA (Entrega)
-
-**Todos juntos:**
-- [ ] Notebook roda sem erros de início a fim
-- [ ] Análise exploratória está completa
-- [ ] Dados foram limpos (sem NaN, sem duplicatas)
-- [ ] Outliers foram identificados
-- [ ] Divisão de papéis está documentada
-- [ ] Todos os commits estão no GitHub
-- [ ] README está atualizado
-- [ ] Documentação do Artur está pronta
+| Arquivo | Finalidade |
+|---------|------------|
+| `README.md` | Guia principal do projeto |
+| `INICIO_AQUI.md` | Roteiro rápido para começar |
+| `GUIA_GIT_PUSH.md` | Orientações de Git e push |
+| `PROBLEMA.md` | Definição do problema e pergunta central |
+| `checklist_semanal/CHECKLIST_SEMANA_1.md` | Tarefas da Semana 1 |
+| `checklist_semanal/CHECKLIST_SEMANA_2.md` | Tarefas da Semana 2 |
+| `checklist_semanal/CHECKLIST_SEMANA_3.md` | Tarefas, cronograma e critérios da Semana 3 |
+| `notebooks/Semana_1_EDA_e_Preparacao.ipynb` | EDA e preparação |
+| `notebooks/semana_2_clustering_baseline.ipynb` | K-Means baseline |
+| `notebooks/semana_3_comparacao.ipynb` | Comparação K-Means vs. DBSCAN |
+| `relatorio/relatorio_semana_2.md` | Justificativas e resultados da Semana 2 |
+| `relatorio/relatorio_semana_3.md` | Justificativas, comparação e decisão da Semana 3 |
+| `instrucoes_IC/TECNICAS_IC.md` | Pesquisa e decisão de técnicas de IC |
+| `instrucoes_IC/PLANO_IC.md` | Plano de integração clustering + IC |
 
 ---
 
-## 💡 DICAS IMPORTANTES
+## Progresso por Semana
 
-### Para Ruan (Implementação)
-- Rode o notebook de cima para baixo, uma célula por vez
-- Se der erro, leia a mensagem de erro com atenção
-- Documente todas as decisões (por que remover? por que manter?)
-- Faça commits pequenos mas frequentes
+### Semana 1
 
-### Para Lucio (Coordenação)
-- Use GitHub Projects para rastrear tarefas
-- Comunique ao grupo seu progresso
-- Verifique se os arquivos estão organizados
-- Documente tudo em markdown
+Status: estruturada.
 
-### Para Artur (Pesquisa)
-- Pesquise ANTES de programar (economia de tempo)
-- Escolha as métricas AGORA (afeta código depois)
-- Estude desbalanceamento (é o principal desafio)
-- Comunique as descobertas ao grupo
+Entregáveis:
 
-### Para TODOS
-- Faça commits regularmente (não deixe para o final)
-- Comuniquem problemas logo
-- Revisar o trabalho um do outro
-- Usar linguagem clara em mensagens de commit
+- análise exploratória;
+- preparação da base;
+- identificação de outliers;
+- documentação do problema;
+- organização inicial do projeto.
 
----
+Arquivos:
 
-## 📋 CHECKLIST FINAL - TUDO PRONTO?
+- `notebooks/Semana_1_EDA_e_Preparacao.ipynb`
+- `checklist_semanal/CHECKLIST_SEMANA_1.md`
+- `PROBLEMA.md`
 
-- [x] Notebook criado com 11 seções
-- [x] README.md com guia completo
-- [x] CHECKLIST_SEMANA_1.md com tarefas
-- [x] .gitignore configurado
-- [x] Estrutura de repositório documentada
-- [x] Próximos passos claramente descritos
-- [ ] Lucio fazer git add/commit/push
-- [ ] Lucio baixar o CSV
-- [ ] Ruan executar o notebook
-- [ ] Artur fazer pesquisa inicial
-- [ ] Todos fazer seus primeiros commits
+### Semana 2
 
----
+Status: checklist, notebook e relatório criados.
 
-## 📞 QUESTÕES FREQUENTES
+Entregáveis:
 
-**P: Preciso fazer tudo agora?**  
-R: NÃO! Siga os "Próximos Passos" acima - é gradual.
+- seleção e justificativa de atributos;
+- padronização;
+- K-Means baseline;
+- visualização;
+- análise inicial dos clusters.
 
-**P: Qual ordem fazer as coisas?**  
-R: 
-1. Lucio: Git setup + baixar CSV
-2. Ruan: Executar notebook
-3. Artur: Fazer pesquisa
-4. Todos: Fazer commits
+Arquivos:
 
-**P: Já tem tudo pronto?**  
-R: Sim! Tudo que vocês precisam está em 4 arquivos criados hoje.
+- `notebooks/semana_2_clustering_baseline.ipynb`
+- `checklist_semanal/CHECKLIST_SEMANA_2.md`
+- `relatorio/relatorio_semana_2.md`
 
-**P: E se der erro?**  
-R: Consulte README.md ou CHECKLIST_SEMANA_1.md - respostas lá!
+### Semana 3
 
-**P: Preciso mudar algo no notebook?**  
-R: Não! Use conforme fornecido. Customize apenas se necessário.
+Status: checklist, notebook e relatório criados.
 
----
+Entregáveis:
 
-## 🎯 META SEMANA 1
+- segundo algoritmo de agrupamento;
+- comparação entre algoritmos;
+- métricas de validação;
+- interpretação dos clusters;
+- nomeação dos perfis;
+- estrutura de saída para a etapa de IC.
 
-**Entregar:**
-- ✅ Notebook executável com EDA completa
-- ✅ Base de dados carregada e documentada
-- ✅ Análise exploratória com gráficos
-- ✅ Dados limpos (ausentes, duplicatas, outliers)
-- ✅ Repositório GitHub atualizado
-- ✅ Documentação clara
-- ✅ Divisão de papéis documentada
+Arquivos:
 
-**Resultado esperado:**
-Uma base de dados pronta para a próxima etapa (Clustering - Semana 2)
+- `notebooks/semana_3_comparacao.ipynb`
+- `checklist_semanal/CHECKLIST_SEMANA_3.md`
+- `relatorio/relatorio_semana_3.md`
+
+Decisão consolidada:
+
+- usar `cluster_kmeans_semana3` como feature categórica de perfil;
+- usar `dbscan_ruido` como indicador binário de anomalia;
+- testar essas variáveis na etapa supervisionada da Semana 4.
+
+### Semanas 4 e 5
+
+Status: planejadas nos documentos de IC.
+
+Arquivos:
+
+- `instrucoes_IC/TECNICAS_IC.md`
+- `instrucoes_IC/PLANO_IC.md`
+- `relatorio/README.md`
 
 ---
 
-## 📞 SUPORTE
+## Próximas Ações Recomendadas
 
-Se tiverem dúvidas:
-1. Consulte o README.md
-2. Consulte o CHECKLIST_SEMANA_1.md
-3. Verifique o notebook - está bem comentado
-4. Procure na seção de FAQ
+1. Revisar se `relatorio/relatorio_semana_3.md` e `checklist_semanal/CHECKLIST_SEMANA_3.md` estão coerentes com o notebook.
+2. Atualizar `instrucoes_IC/PLANO_IC.md` com a decisão final da Semana 3, se necessário.
+3. Iniciar a Semana 4 com modelo supervisionado baseline sem clusters.
+4. Criar versão supervisionada com `cluster_kmeans_semana3`.
+5. Criar versão supervisionada com `cluster_kmeans_semana3` + `dbscan_ruido`.
+6. Comparar os modelos usando AUC-ROC, F1-Score, Recall e Precision.
 
 ---
 
-**Tudo pronto! Bora colocar em prática? 🚀**
+## Observações Importantes
 
-**Status:** ✅ Estrutura completa pronta  
-**Próximo:** Lucio fazer git push + Ruan executar notebook  
-**Prazo:** Final dessa semana
+- `dados/creditcard.csv` deve permanecer local e não deve ser versionado.
+- A coluna `Class` não deve ser usada como entrada dos algoritmos de clustering.
+- A coluna `Class` pode ser usada depois para análise externa dos clusters.
+- Acurácia não deve ser métrica principal por causa do desbalanceamento extremo.
+- Outliers devem ser analisados com cuidado, não removidos automaticamente.
+
+---
+
+**Status geral:** estrutura documentada até a Semana 3; próximo foco é a integração supervisionada da Semana 4.

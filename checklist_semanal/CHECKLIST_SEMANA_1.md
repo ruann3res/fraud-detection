@@ -12,7 +12,7 @@
 - [ ] Clone/atualize o repositório Git
 - [ ] Instale dependências: `pip install pandas numpy matplotlib seaborn scikit-learn`
 - [ ] Verifique se o arquivo `creditcard.csv` está em `dados/`
-- [ ] Abra o notebook `Semana_1_EDA_e_Preparacao.ipynb`
+- [ ] Abra o notebook `notebooks/Semana_1_EDA_e_Preparacao.ipynb`
 
 ### NOTEBOOK - SEÇÕES A IMPLEMENTAR
 - [ ] **Seção 2:** Executar importações e configurações
@@ -174,7 +174,7 @@
     - Precision-Recall Curve
 
 ### DOCUMENTAÇÃO TÉCNICA
-- [ ] Criar documento `TECNICAS_IC.md` com:
+- [ ] Criar documento `instrucoes_IC/TECNICAS_IC.md` com:
   - [ ] Problema: desbalanceamento extremo
   - [ ] Técnicas estudadas (pelo menos 3)
   - [ ] Justificativa da técnica escolhida
@@ -202,7 +202,7 @@
   ```
 
 ### DOCUMENTAÇÃO
-- [ ] Criar arquivo `PLANO_IC.md` com:
+- [ ] Criar arquivo `instrucoes_IC/PLANO_IC.md` com:
   - [ ] Escolha da técnica (justificada)
   - [ ] Dados necessários (features? clusters?)
   - [ ] Métricas de avaliação
@@ -261,8 +261,8 @@
 ### DOCUMENTAÇÃO
 - [ ] README.md ✅
 - [ ] PROBLEMA.md (se criado)
-- [ ] TECNICAS_IC.md (Artur)
-- [ ] PLANO_IC.md (Artur)
+- [ ] `instrucoes_IC/TECNICAS_IC.md` (Artur)
+- [ ] `instrucoes_IC/PLANO_IC.md` (Artur)
 - [ ] Commit messages claras
 
 ### GIT
