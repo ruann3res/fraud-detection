@@ -44,13 +44,22 @@ fraud-detection/
 │   ├── README.md
 │   ├── Semana_1_EDA_e_Preparacao.ipynb
 │   ├── semana_2_clustering_baseline.ipynb
-│   └── semana_3_comparacao.ipynb
+│   ├── semana_3_comparacao.ipynb
+│   ├── semana_4_modelo_ic.ipynb
+│   ├── semana_5_validacao_completa_kmeans_dbscan.ipynb
+│   ├── semana_5_validacao_completa_dbscan.ipynb
+│   └── semana_6_modelo_mlp.ipynb
 ├── relatorio/
 │   ├── README.md
 │   ├── relatorio_semana_2.md
-│   └── relatorio_semana_3.md
+│   ├── relatorio_semana_3.md
+│   ├── relatorio_semana_4.md
+│   ├── relatorio_semana_5.md
+│   └── relatorio_semana_6.md
 └── scripts/
-    └── README.md
+    ├── README.md
+    ├── semana_4_modelo_ic.py
+    └── semana_6_modelo_mlp.py
 ```
 
 ---
@@ -104,6 +113,9 @@ Ordem sugerida:
 1. `notebooks/Semana_1_EDA_e_Preparacao.ipynb`
 2. `notebooks/semana_2_clustering_baseline.ipynb`
 3. `notebooks/semana_3_comparacao.ipynb`
+4. `notebooks/semana_4_modelo_ic.ipynb`
+5. `notebooks/semana_5_validacao_completa_kmeans_dbscan.ipynb`
+6. `notebooks/semana_6_modelo_mlp.ipynb`
 
 ---
 
@@ -169,30 +181,52 @@ Resultado consolidado:
 
 ### Semana 4 - Inteligência Computacional I
 
-Arquivos de apoio:
+Arquivos principais:
 
-- `instrucoes_IC/TECNICAS_IC.md`
-- `instrucoes_IC/PLANO_IC.md`
+- `notebooks/semana_4_modelo_ic.ipynb`
+- `scripts/semana_4_modelo_ic.py`
+- `relatorio/relatorio_semana_4.md`
+- `resultados/semana_4_metricas_modelo_ic.csv`
 
-Entrega esperada:
+Entrega:
 
-- construção do modelo supervisionado;
-- uso dos clusters como features;
-- tratamento do desbalanceamento;
-- comparação preliminar com e sem clusters.
+- Random Forest com e sem clusters (amostra 15k);
+- métricas de classificação com `class_weight='balanced'`;
+- comparação preliminar baseline vs. híbrido.
 
-### Semana 5 - Integração Final
+### Semana 5 - Validação na Base Completa
 
-Pasta prevista:
+Arquivos principais:
 
-- `relatorio/`
+- `notebooks/semana_5_validacao_completa_kmeans_dbscan.ipynb`
+- `notebooks/semana_5_validacao_completa_dbscan.ipynb`
+- `relatorio/relatorio_semana_5.md`
+- `resultados/semana_5_metricas_completa.csv`
+- `resultados/semana_5_clusters_base_completa.csv`
 
-Entrega esperada:
+Entrega:
 
-- refinamento do modelo;
-- análise final dos resultados;
-- relatório técnico;
-- apresentação.
+- clustering e Random Forest na população completa (283.726 transações, 473 fraudes);
+- conclusão: clusters não agregam ganho estável ao RF;
+- Random Forest permanece como referência principal.
+
+### Semana 6 - MLP e Baselines Lineares
+
+Arquivos principais:
+
+- `notebooks/semana_6_modelo_mlp.ipynb`
+- `scripts/semana_6_modelo_mlp.py`
+- `relatorio/relatorio_semana_6.md`
+- `resultados/semana_6_metricas_mlp.csv`
+- `resultados/semana_6_metricas_ajustadas.csv`
+- `resultados/semana_6_resumo_referencia_rf.csv`
+
+Entrega:
+
+- MLP supervisionado e Regressão Logística balanceada na base completa;
+- calibração de probabilidades e ajuste de limiar (Precision vs. Recall);
+- variantes de MLP com regularização e arquiteturas menores;
+- comparação com Random Forest: **nenhum desafiante superou AP e F1 de forma consistente**.
 
 ---
 
@@ -225,10 +259,15 @@ Observações importantes:
 
 Plano atual:
 
-- usar Random Forest como técnica supervisionada principal;
+- **Random Forest** como técnica supervisionada principal e referência de desempenho;
+- MLP e Regressão Logística testados como alternativas (Semana 6);
 - testar modelos com e sem variáveis de cluster;
 - usar `class_weight='balanced'` e, se necessário, SMOTE como experimento;
-- priorizar AUC-ROC, F1-Score, Recall, Precision e curva Precision-Recall.
+- priorizar AUC-ROC, Average Precision, F1-Score, Recall, Precision e curva Precision-Recall;
+- ajustar limiar de decisão e calibrar probabilidades para modelos baseados em score.
+
+**Status:** o Random Forest da Semana 5 permanece o melhor modelo até que outro algoritmo
+supere Average Precision e F1 de forma consistente.
 
 Detalhes em `instrucoes_IC/PLANO_IC.md` e `instrucoes_IC/TECNICAS_IC.md`.
 
@@ -261,10 +300,13 @@ Não usar acurácia como métrica principal, pois a base é muito desbalanceada.
 - Semana 1 documentada e com notebook em `notebooks/`.
 - Semana 2 documentada com checklist, relatório e baseline K-Means.
 - Semana 3 documentada com checklist, relatório e comparação K-Means vs. DBSCAN.
-- Documentos de IC estão em `instrucoes_IC/`.
-- Próximo foco: Semana 4, integração dos clusters ao modelo supervisionado.
+- Semana 4: Random Forest com e sem clusters (amostra 15k).
+- Semana 5: validação na base completa; clusters não superam RF.
+- Semana 6: MLP + Regressão Logística com calibração e limiar; RF permanece referência.
+- Documentos de IC em `instrucoes_IC/`.
+- Resultados consolidados em `resultados/` e `relatorio/`.
 
 ---
 
-**Última atualização:** 15 de junho de 2026  
-**Status:** Estrutura atualizada até a Semana 3
+**Última atualização:** 7 de julho de 2026  
+**Status:** Estrutura atualizada até a Semana 6
