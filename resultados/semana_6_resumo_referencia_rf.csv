@@ -1,0 +1,2 @@
+referencia_rf,rf_ap_cv,rf_f1_cv,rf_ap_teste,rf_f1_teste,melhor_desafiante_ap_teste,melhor_desafiante_f1_teste,algum_supera_rf_consistente
+RF apenas DBSCAN - base completa,0.838592760618635,0.8422655509977186,0.8082598569528873,0.8313253012048193,"MLP (64,32) alpha=1e-4 [limiar 0.416]","MLP (16,) alpha=1e-2 [limiar 0.595]",False
