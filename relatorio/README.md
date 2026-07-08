@@ -29,7 +29,12 @@ O **Random Forest** (Semana 5) permanece o classificador de referência. MLP e R
 Logística (Semana 6) melhoraram com calibração e ajuste de limiar, mas não superaram o RF
 em Average Precision e F1 de forma consistente.
 
+## Relatório final
+
+| Arquivo | Conteúdo |
+|---------|----------|
+| `relatorio_final.md` | Consolidação de todas as semanas (estrutura exigida pelo TFI) |
+
 ## Entregáveis finais previstos
 
-- `relatorio_tecnico.md`: consolidação de todas as semanas;
-- `slides.pptx`: apresentação final.
+- `slides.pptx`: apresentação final (ver `presentation/`).
